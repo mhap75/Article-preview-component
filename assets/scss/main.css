@@ -35,6 +35,18 @@ body {
   grid-template-columns: 1fr 1.3fr;
 }
 
+.social-share_mobile, .content_footer .social-share {
+  background-color: hsl(217deg, 19%, 35%);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  letter-spacing: 0.8ch;
+}
+.social-share_mobile img, .content_footer .social-share img {
+  width: auto;
+  cursor: pointer;
+}
+
 .content_leftSide {
   background-image: url("../image/drawers.jpg");
   background-position: left top;
@@ -87,20 +99,11 @@ body {
 }
 .content_footer .social-share {
   position: absolute;
-  background-color: hsl(217deg, 19%, 35%);
   right: -25.5%;
   top: -4.5rem;
   padding: 0.2rem 2rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  border-radius: 10px;
-  letter-spacing: 0.8ch;
   box-shadow: 2px 5px 18px -5px rgba(72, 85, 106, 0.5411764706);
-}
-.content_footer .social-share img {
-  width: auto;
-  cursor: pointer;
+  border-radius: 10px;
 }
 .content_footer .social-share::after {
   content: "";
@@ -113,13 +116,37 @@ body {
   border-color: hsl(217deg, 19%, 35%) transparent transparent transparent;
 }
 
+.social-share_mobile {
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+  min-height: 4.5rem;
+  padding: 0.5rem 3rem;
+  flex-wrap: wrap;
+}
+.social-share_mobile .btn {
+  margin-left: auto;
+  background-color: hsl(212deg, 23%, 69%);
+  padding: 0.5em;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  width: 35px;
+  aspect-ratio: 1;
+}
+.social-share_mobile .btn svg {
+  margin-top: 17%;
+}
+.social-share_mobile .btn svg path {
+  fill: hsl(210deg, 46%, 95%);
+}
+
 h6,
 p {
   color: hsl(212deg, 23%, 69%);
   max-width: 45ch;
 }
 
-@media (max-width: 798px) {
+@media (max-width: 768px) {
   p {
     max-width: 65ch;
   }
@@ -131,5 +158,13 @@ p {
   .content_leftSide {
     border-top-right-radius: inherit;
     border-bottom-left-radius: initial;
+  }
+  .social-share {
+    display: none !important;
+  }
+}
+@media (min-width: 769px) {
+  .social-share_mobile {
+    display: none !important;
   }
 }/*# sourceMappingURL=main.css.map */

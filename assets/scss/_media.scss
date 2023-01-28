@@ -1,4 +1,4 @@
-@media (max-width: 798px) {
+@media (max-width: 768px) {
     p {
         max-width: 65ch;
     }
@@ -7,10 +7,20 @@
         display: grid;
         grid-template-columns: auto;
         grid-template-rows: 1fr 1.4fr auto;
-
     }
-    .content_leftSide {
-        border-top-right-radius: inherit;
-        border-bottom-left-radius: initial;
+    .content {
+        &_leftSide {
+            border-top-right-radius: inherit;
+            border-bottom-left-radius: initial;
+        }
+    }
+    .social-share {
+        display: none !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .social-share_mobile {
+        display: none !important;
     }
 }

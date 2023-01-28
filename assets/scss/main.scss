@@ -40,6 +40,20 @@ body {
     grid-template-columns: 1fr 1.3fr;
 }
 
+%share-shared {
+    background-color: $VeryDarkGrayishBlue;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    letter-spacing: 0.8ch;
+    img {
+        width: auto;
+        cursor: pointer;
+    }
+}
+// for content, and share in mobile mode
+$padding: 3rem;
+
 .content {
     &_leftSide {
         background-image: url("../image/drawers.jpg");
@@ -51,7 +65,7 @@ body {
     }
 
     &_rightSide {
-        padding: 3rem;
+        padding: $padding;
 
         p {
             margin-block: 0.8rem;
@@ -101,21 +115,12 @@ body {
 
         .social-share {
             position: absolute;
-            background-color: $VeryDarkGrayishBlue;
+            @extend %share-shared;
             right: -25.5%;
             top: -4.5rem;
             padding: 0.2rem 2rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            border-radius: 10px;
-            letter-spacing: 0.8ch;
             box-shadow: 2px 5px 18px -5px #48556a8a;
-            img {
-                width: auto;
-                cursor: pointer;
-            }
-
+            border-radius: 10px;
             &::after {
                 content: "";
                 position: absolute;
@@ -127,6 +132,32 @@ body {
                 border-style: solid;
                 border-color: $VeryDarkGrayishBlue transparent transparent transparent;
             }
+        }
+    }
+}
+
+.social-share_mobile {
+    @extend %share-shared;
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
+    min-height: 4.5rem;
+    padding: 0.5rem $padding;
+    flex-wrap: wrap;
+
+    .btn {
+        margin-left: auto;
+        background-color: $GrayishBlue;
+        padding: 0.5em;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        width: 35px;
+        aspect-ratio: 1;
+        svg {
+            path {
+                fill: $LightGrayishBlue;
+            }
+            margin-top: 17%;
         }
     }
 }
