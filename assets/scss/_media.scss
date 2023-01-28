@@ -7,11 +7,24 @@
         display: grid;
         grid-template-columns: auto;
         grid-template-rows: 1fr 1.4fr auto;
+        overflow: hidden;
     }
     .content {
         &_leftSide {
-            border-top-right-radius: inherit;
-            border-bottom-left-radius: initial;
+            border-radius: 0;
+        }
+        &_rightSide {
+            padding-bottom: 1.5rem;
+            button {
+                &:hover,
+                &:focus,
+                &:active {
+                    background-color: $GrayishBlue;
+                    path {
+                        fill: $LightGrayishBlue;
+                    }
+                }
+            }
         }
     }
     .social-share {

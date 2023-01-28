@@ -33,11 +33,11 @@ body {
   box-shadow: 18px 25px 40px -10px rgba(176, 176, 176, 0.2196078431);
   display: grid;
   grid-template-columns: 1fr 1.3fr;
+  position: relative;
 }
 
 .social-share_mobile, .content_footer .social-share {
   background-color: hsl(217deg, 19%, 35%);
-  display: flex;
   align-items: center;
   gap: 1rem;
   letter-spacing: 0.8ch;
@@ -56,7 +56,7 @@ body {
   border-top-left-radius: inherit;
 }
 .content_rightSide {
-  padding: 3rem;
+  padding: 2rem;
 }
 .content_rightSide p {
   margin-block: 0.8rem;
@@ -69,6 +69,7 @@ body {
   width: 35px;
   height: 35px;
   cursor: pointer;
+  z-index: 100;
 }
 .content_rightSide button:hover, .content_rightSide button:focus, .content_rightSide button:active {
   background-color: hsl(214deg, 17%, 51%);
@@ -81,6 +82,8 @@ body {
   justify-content: space-between;
   align-items: center;
   position: relative;
+  margin-top: 2rem;
+  flex-wrap: wrap;
 }
 .content_footer .profile {
   display: flex;
@@ -99,11 +102,13 @@ body {
 }
 .content_footer .social-share {
   position: absolute;
-  right: -25.5%;
+  right: -23.6%;
   top: -4.5rem;
   padding: 0.2rem 2rem;
   box-shadow: 2px 5px 18px -5px rgba(72, 85, 106, 0.5411764706);
   border-radius: 10px;
+  display: none;
+  opacity: 0;
 }
 .content_footer .social-share::after {
   content: "";
@@ -117,27 +122,14 @@ body {
 }
 
 .social-share_mobile {
-  border-bottom-left-radius: inherit;
-  border-bottom-right-radius: inherit;
   min-height: 4.5rem;
-  padding: 0.5rem 3rem;
+  padding: 2.1rem 2rem;
   flex-wrap: wrap;
-}
-.social-share_mobile .btn {
-  margin-left: auto;
-  background-color: hsl(212deg, 23%, 69%);
-  padding: 0.5em;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  width: 35px;
-  aspect-ratio: 1;
-}
-.social-share_mobile .btn svg {
-  margin-top: 17%;
-}
-.social-share_mobile .btn svg path {
-  fill: hsl(210deg, 46%, 95%);
+  display: none;
+  bottom: -25%;
+  z-index: 90;
+  position: absolute;
+  width: 100%;
 }
 
 h6,
@@ -154,10 +146,19 @@ p {
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: 1fr 1.4fr auto;
+    overflow: hidden;
   }
   .content_leftSide {
-    border-top-right-radius: inherit;
-    border-bottom-left-radius: initial;
+    border-radius: 0;
+  }
+  .content_rightSide {
+    padding-bottom: 1.5rem;
+  }
+  .content_rightSide button:hover, .content_rightSide button:focus, .content_rightSide button:active {
+    background-color: hsl(212deg, 23%, 69%);
+  }
+  .content_rightSide button:hover path, .content_rightSide button:focus path, .content_rightSide button:active path {
+    fill: hsl(210deg, 46%, 95%);
   }
   .social-share {
     display: none !important;

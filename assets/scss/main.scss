@@ -38,11 +38,11 @@ body {
     box-shadow: 18px 25px 40px -10px #b0b0b038;
     display: grid;
     grid-template-columns: 1fr 1.3fr;
+    position: relative;
 }
 
 %share-shared {
     background-color: $VeryDarkGrayishBlue;
-    display: flex;
     align-items: center;
     gap: 1rem;
     letter-spacing: 0.8ch;
@@ -52,7 +52,7 @@ body {
     }
 }
 // for content, and share in mobile mode
-$padding: 3rem;
+$padding: 2rem;
 
 .content {
     &_leftSide {
@@ -79,6 +79,7 @@ $padding: 3rem;
             width: 35px;
             height: 35px;
             cursor: pointer;
+            z-index: 100;
 
             &:hover,
             &:focus,
@@ -96,6 +97,8 @@ $padding: 3rem;
         justify-content: space-between;
         align-items: center;
         position: relative;
+        margin-top: 2rem;
+        flex-wrap: wrap;
 
         .profile {
             display: flex;
@@ -116,11 +119,13 @@ $padding: 3rem;
         .social-share {
             position: absolute;
             @extend %share-shared;
-            right: -25.5%;
+            right: -23.6%;
             top: -4.5rem;
             padding: 0.2rem 2rem;
             box-shadow: 2px 5px 18px -5px #48556a8a;
             border-radius: 10px;
+            display: none;
+            opacity: 0;
             &::after {
                 content: "";
                 position: absolute;
@@ -138,28 +143,14 @@ $padding: 3rem;
 
 .social-share_mobile {
     @extend %share-shared;
-    border-bottom-left-radius: inherit;
-    border-bottom-right-radius: inherit;
     min-height: 4.5rem;
-    padding: 0.5rem $padding;
+    padding: 2.1rem $padding;
     flex-wrap: wrap;
-
-    .btn {
-        margin-left: auto;
-        background-color: $GrayishBlue;
-        padding: 0.5em;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        width: 35px;
-        aspect-ratio: 1;
-        svg {
-            path {
-                fill: $LightGrayishBlue;
-            }
-            margin-top: 17%;
-        }
-    }
+    display: none;
+    bottom: -25%;
+    z-index: 90;
+    position: absolute;
+    width: 100%;
 }
 
 h6,
