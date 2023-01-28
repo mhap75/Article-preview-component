@@ -2,6 +2,7 @@
 body {
   margin: 0;
   padding: 0;
+  height: 100dvh;
 }
 
 * {
@@ -16,10 +17,18 @@ body {
   font-weight: 500;
   color: hsl(217deg, 19%, 35%);
   background-color: hsl(210deg, 46%, 95%);
+  display: grid;
+  place-content: center;
 }
 
 .card {
   background-color: hsl(0deg, 0%, 100%);
+  overflow: hidden;
+  max-width: max(900px, 50dvw);
+}
+
+.content_rightSide {
+  padding: 3rem;
 }
 
 .profile h6 {
