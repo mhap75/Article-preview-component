@@ -27,8 +27,8 @@ Users should be able to:
 
 ### Links
 
-- [Solution URL](https://www.frontendmentor.io/solutions/interactive-rating-component-mDiLFsPc7S)
-- [Live Site URL](https://funny-pegasus-60c20f.netlify.app/)
+- [Solution URL](https://www.frontendmentor.io/solutions/article-preview-component-4urO_n1LOw)
+- [Live Site URL](https://adorable-boba-77b0da.netlify.app/)
 
 ## My process
 
