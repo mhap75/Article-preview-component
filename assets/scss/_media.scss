@@ -1,4 +1,4 @@
-@media (max-width: 798px) {
+@media (max-width: 768px) {
     p {
         max-width: 65ch;
     }
@@ -7,5 +7,33 @@
         display: grid;
         grid-template-columns: auto;
         grid-template-rows: 1fr 1.4fr auto;
+        overflow: hidden;
+    }
+    .content {
+        &_leftSide {
+            border-radius: 0;
+        }
+        &_rightSide {
+            padding-bottom: 1.5rem;
+            button {
+                &:hover,
+                &:focus,
+                &:active {
+                    background-color: $GrayishBlue;
+                    path {
+                        fill: $LightGrayishBlue;
+                    }
+                }
+            }
+        }
+    }
+    .social-share {
+        display: none !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .social-share_mobile {
+        display: none !important;
     }
 }

@@ -33,13 +33,26 @@ body {
 
 .card {
     background-color: $white;
-    overflow: hidden;
     max-width: min(90dvw, 900px);
     border-radius: 20px;
     box-shadow: 18px 25px 40px -10px #b0b0b038;
     display: grid;
     grid-template-columns: 1fr 1.3fr;
+    position: relative;
 }
+
+%share-shared {
+    background-color: $VeryDarkGrayishBlue;
+    align-items: center;
+    gap: 1rem;
+    letter-spacing: 0.8ch;
+    img {
+        width: auto;
+        cursor: pointer;
+    }
+}
+// for content, and share in mobile mode
+$padding: 2rem;
 
 .content {
     &_leftSide {
@@ -47,10 +60,12 @@ body {
         background-position: left top;
         background-repeat: no-repeat;
         background-size: cover;
+        border-bottom-left-radius: inherit;
+        border-top-left-radius: inherit;
     }
 
     &_rightSide {
-        padding: 3rem;
+        padding: $padding;
 
         p {
             margin-block: 0.8rem;
@@ -63,10 +78,17 @@ body {
             border-radius: 50%;
             width: 35px;
             height: 35px;
-            display: flex;
-            justify-content: center;
             cursor: pointer;
-            position: relative;
+            z-index: 100;
+
+            &:hover,
+            &:focus,
+            &:active {
+                background-color: $DesaturatedDarkBlue;
+                path {
+                    fill: $LightGrayishBlue;
+                }
+            }
         }
     }
 
@@ -74,6 +96,9 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        position: relative;
+        margin-top: 2rem;
+        flex-wrap: wrap;
 
         .profile {
             display: flex;
@@ -90,7 +115,42 @@ body {
                 margin-right: 1rem;
             }
         }
+
+        .social-share {
+            position: absolute;
+            @extend %share-shared;
+            right: -23.6%;
+            top: -4.5rem;
+            padding: 0.2rem 2rem;
+            box-shadow: 2px 5px 18px -5px #48556a8a;
+            border-radius: 10px;
+            display: none;
+            opacity: 0;
+            &::after {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                $size: 11px;
+                margin-left: -$size;
+                border-width: $size;
+                border-style: solid;
+                border-color: $VeryDarkGrayishBlue transparent transparent transparent;
+            }
+        }
     }
+}
+
+.social-share_mobile {
+    @extend %share-shared;
+    min-height: 4.5rem;
+    padding: 2.1rem $padding;
+    flex-wrap: wrap;
+    display: none;
+    bottom: -25%;
+    z-index: 90;
+    position: absolute;
+    width: 100%;
 }
 
 h6,
@@ -99,4 +159,4 @@ p {
     max-width: 45ch;
 }
 
-@import 'media';
+@import "media";
