@@ -34,11 +34,11 @@ body {
 .card {
     background-color: $white;
     overflow: hidden;
-    max-width: min(900px, 49dvw);
+    max-width: min(90dvw, 900px);
     border-radius: 20px;
     box-shadow: 18px 25px 40px -10px #b0b0b038;
     display: grid;
-    grid-template-columns: 0.7fr 1fr;
+    grid-template-columns: 1fr 1.3fr;
 }
 
 .content {
@@ -96,3 +96,5 @@ h6,
 p {
     color: $GrayishBlue;
 }
+
+@import 'media';

@@ -29,11 +29,11 @@ body {
 .card {
   background-color: hsl(0deg, 0%, 100%);
   overflow: hidden;
-  max-width: min(900px, 49dvw);
+  max-width: min(90dvw, 900px);
   border-radius: 20px;
   box-shadow: 18px 25px 40px -10px rgba(176, 176, 176, 0.2196078431);
   display: grid;
-  grid-template-columns: 0.7fr 1fr;
+  grid-template-columns: 1fr 1.3fr;
 }
 
 .content_leftSide {
@@ -83,4 +83,12 @@ body {
 h6,
 p {
   color: hsl(212deg, 23%, 69%);
+}
+
+@media (max-width: 798px) {
+  .card {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 1.4fr;
+  }
 }/*# sourceMappingURL=main.css.map */
