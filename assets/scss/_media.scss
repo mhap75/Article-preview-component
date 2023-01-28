@@ -7,5 +7,10 @@
         display: grid;
         grid-template-columns: auto;
         grid-template-rows: 1fr 1.4fr auto;
+
+    }
+    .content_leftSide {
+        border-top-right-radius: inherit;
+        border-bottom-left-radius: initial;
     }
 }
