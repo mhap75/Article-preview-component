@@ -1,7 +1,36 @@
-@import 'cdns';
-@import 'variables';
+@import "cdns";
+@import "variables";
+
+// Reset
+body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
-    font-family: 'Manrope', sans-serif;
+    font-family: "Manrope", sans-serif;
     font-size: 13px;
+    font-weight: 500;
+    color: $VeryDarkGrayishBlue;
+    background-color: $LightGrayishBlue;
+}
+
+.card {
+    background-color: $white;
+}
+
+.profile {
+    h6 {
+        color: $GrayishBlue;
+    }
+}
+
+ p {
+    color: $DesaturatedDarkBlue;
 }
