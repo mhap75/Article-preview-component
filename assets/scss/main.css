@@ -24,11 +24,25 @@ body {
 .card {
   background-color: hsl(0deg, 0%, 100%);
   overflow: hidden;
-  max-width: max(900px, 50dvw);
+  max-width: min(900px, 50dvw);
 }
 
 .content_rightSide {
   padding: 3rem;
+}
+.content_rightSide button {
+  border: none;
+  background-color: hsl(210deg, 46%, 95%);
+  padding: 0.7em;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.content_footer {
+  display: flex;
 }
 
 .profile h6 {
