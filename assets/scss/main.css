@@ -5,6 +5,10 @@ body {
   height: 100dvh;
 }
 
+img {
+  width: 100%;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -19,16 +23,30 @@ body {
   background-color: hsl(210deg, 46%, 95%);
   display: grid;
   place-content: center;
+  line-height: 1.5;
 }
 
 .card {
   background-color: hsl(0deg, 0%, 100%);
   overflow: hidden;
-  max-width: min(900px, 50dvw);
+  max-width: min(900px, 49dvw);
+  border-radius: 20px;
+  box-shadow: 18px 25px 40px -10px rgba(176, 176, 176, 0.2196078431);
+  display: grid;
+  grid-template-columns: 0.7fr 1fr;
 }
 
+.content_leftSide {
+  background-image: url("../image/drawers.jpg");
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .content_rightSide {
   padding: 3rem;
+}
+.content_rightSide p {
+  margin-block: 0.8rem;
 }
 .content_rightSide button {
   border: none;
@@ -43,12 +61,26 @@ body {
 }
 .content_footer {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.content_footer .profile {
+  display: flex;
+  align-items: center;
+}
+.content_footer .profile::before {
+  content: "";
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-image: url("../image/avatar-michelle.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 1rem;
 }
 
-.profile h6 {
-  color: hsl(212deg, 23%, 69%);
-}
-
+h6,
 p {
-  color: hsl(214deg, 17%, 51%);
+  color: hsl(212deg, 23%, 69%);
 }/*# sourceMappingURL=main.css.map */
