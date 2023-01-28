@@ -1,4 +1,8 @@
 @media (max-width: 798px) {
+    p {
+        max-width: 65ch;
+    }
+
     .card {
         display: grid;
         grid-template-columns: auto;

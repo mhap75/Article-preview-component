@@ -38,7 +38,7 @@ body {
 
 .content_leftSide {
   background-image: url("../image/drawers.jpg");
-  background-position: left center;
+  background-position: left top;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -58,6 +58,7 @@ body {
   display: flex;
   justify-content: center;
   cursor: pointer;
+  position: relative;
 }
 .content_footer {
   display: flex;
@@ -83,9 +84,13 @@ body {
 h6,
 p {
   color: hsl(212deg, 23%, 69%);
+  max-width: 45ch;
 }
 
 @media (max-width: 798px) {
+  p {
+    max-width: 65ch;
+  }
   .card {
     display: grid;
     grid-template-columns: auto;
