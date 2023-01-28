@@ -33,7 +33,6 @@ body {
 
 .card {
     background-color: $white;
-    overflow: hidden;
     max-width: min(90dvw, 900px);
     border-radius: 20px;
     box-shadow: 18px 25px 40px -10px #b0b0b038;
@@ -47,6 +46,8 @@ body {
         background-position: left top;
         background-repeat: no-repeat;
         background-size: cover;
+        border-bottom-left-radius: inherit;
+        border-top-left-radius: inherit;
     }
 
     &_rightSide {
@@ -63,10 +64,16 @@ body {
             border-radius: 50%;
             width: 35px;
             height: 35px;
-            display: flex;
-            justify-content: center;
             cursor: pointer;
-            position: relative;
+
+            &:hover,
+            &:focus,
+            &:active {
+                background-color: $DesaturatedDarkBlue;
+                path {
+                    fill: $LightGrayishBlue;
+                }
+            }
         }
     }
 
@@ -74,6 +81,7 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        position: relative;
 
         .profile {
             display: flex;
@@ -90,6 +98,36 @@ body {
                 margin-right: 1rem;
             }
         }
+
+        .social-share {
+            position: absolute;
+            background-color: $VeryDarkGrayishBlue;
+            right: -25.5%;
+            top: -4.5rem;
+            padding: 0.2rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-radius: 10px;
+            letter-spacing: 0.8ch;
+            box-shadow: 2px 5px 18px -5px #48556a8a;
+            img {
+                width: auto;
+                cursor: pointer;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                $size: 11px;
+                margin-left: -$size;
+                border-width: $size;
+                border-style: solid;
+                border-color: $VeryDarkGrayishBlue transparent transparent transparent;
+            }
+        }
     }
 }
 
@@ -99,4 +137,4 @@ p {
     max-width: 45ch;
 }
 
-@import 'media';
+@import "media";

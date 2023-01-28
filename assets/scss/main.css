@@ -28,7 +28,6 @@ body {
 
 .card {
   background-color: hsl(0deg, 0%, 100%);
-  overflow: hidden;
   max-width: min(90dvw, 900px);
   border-radius: 20px;
   box-shadow: 18px 25px 40px -10px rgba(176, 176, 176, 0.2196078431);
@@ -41,6 +40,8 @@ body {
   background-position: left top;
   background-repeat: no-repeat;
   background-size: cover;
+  border-bottom-left-radius: inherit;
+  border-top-left-radius: inherit;
 }
 .content_rightSide {
   padding: 3rem;
@@ -55,15 +56,19 @@ body {
   border-radius: 50%;
   width: 35px;
   height: 35px;
-  display: flex;
-  justify-content: center;
   cursor: pointer;
-  position: relative;
+}
+.content_rightSide button:hover, .content_rightSide button:focus, .content_rightSide button:active {
+  background-color: hsl(214deg, 17%, 51%);
+}
+.content_rightSide button:hover path, .content_rightSide button:focus path, .content_rightSide button:active path {
+  fill: hsl(210deg, 46%, 95%);
 }
 .content_footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 .content_footer .profile {
   display: flex;
@@ -79,6 +84,33 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   margin-right: 1rem;
+}
+.content_footer .social-share {
+  position: absolute;
+  background-color: hsl(217deg, 19%, 35%);
+  right: -25.5%;
+  top: -4.5rem;
+  padding: 0.2rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 10px;
+  letter-spacing: 0.8ch;
+  box-shadow: 2px 5px 18px -5px rgba(72, 85, 106, 0.5411764706);
+}
+.content_footer .social-share img {
+  width: auto;
+  cursor: pointer;
+}
+.content_footer .social-share::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -11px;
+  border-width: 11px;
+  border-style: solid;
+  border-color: hsl(217deg, 19%, 35%) transparent transparent transparent;
 }
 
 h6,
