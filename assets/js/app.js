@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    $('#shrbtn').on('click', function () {
+    $('.content_footer').on('click', '#shrbtn' ,function () {
 
         if ($('.social-share').css('display') === 'none') {
             $('.social-share').fadeIn(600)
